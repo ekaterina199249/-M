@@ -1,3 +1,4 @@
+
 import java.time.LocalDate;
 
 public class Main {
@@ -13,15 +14,11 @@ public class Main {
         System.out.println("Задача 3");
         int deliveryDays = getDeliveryDays(60);
         System.out.println(deliveryDays);
-
-        {
-        }
     }
 
     private static int getDeliveryDays(int i) {
         return i;
     }
-
 
     public static void checkIsLeapYearAndPrint(int year) {
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
@@ -29,7 +26,6 @@ public class Main {
         } else {
             System.out.printf("%s год - не високосный год%n", year);
         }
-
     }
     public static int checkValidSystemAndPrint(int system, int year) {
         int currentYear = LocalDate.now().getYear();
@@ -44,16 +40,20 @@ public class Main {
         } else {
             System.out.println("Не корректные данные");
         }
-        int distance = 108;
+        int distance = 95;
         if (distance >= 0 && distance <= 20) {
-                return 1;
-            } else if (distance > 20 && distance <= 60) {
-                return 2;
-            } else if (distance > 60 && distance <= 100) {
-                return 3;
-            } else {
-               return -1;
-            }
-        }
-    }
+            System.out.println("Потребуется дней: " + 1);
+            return 1;
+        } else if (distance > 20 && distance <= 60) {
+            System.out.println("Потребуется дней: " + 2);
+            return 2;
+        } else if (distance > 60 && distance <= 100) {
+            System.out.println("Потребуется дней: " + 3);
+        } else {
+            System.out.println("Доставки нет");
 
+        }
+
+        return 3;
+    }
+}
