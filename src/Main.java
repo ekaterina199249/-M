@@ -27,6 +27,7 @@ public class Main {
             System.out.printf("%s год - не високосный год%n", year);
         }
     }
+
     public static int checkValidSystemAndPrint(int system, int year) {
         int currentYear = LocalDate.now().getYear();
         if (system == 0 && year < currentYear) {
@@ -47,13 +48,15 @@ public class Main {
         } else if (distance > 20 && distance <= 60) {
             System.out.println("Потребуется дней: " + 2);
             return 2;
-        } else if (distance > 60 && distance <= 100) {
+        } else if (distance > 60 && distance < 100) {
             System.out.println("Потребуется дней: " + 3);
         } else {
             System.out.println("Доставки нет");
 
         }
 
-        return 3;
+        return -1;
     }
 }
+
+
